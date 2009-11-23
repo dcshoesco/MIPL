@@ -1,0 +1,22 @@
+<div class="moduletable_text" id="Mod38">
+    <h3 class="clearfix">
+        <span class="right-bg clearfix"><span class="left-bg">Dernieres photos</span></span></h3>
+    <div class="ja-box-ct clearfix">
+        <div class="advs bannergroup_text">
+			<div id="gallery"></div>
+			<!-- Script that embeds gallery. -->
+			<script language="javascript" type="text/javascript">
+				// Location of swf file. You can change gallery width and height here (using pixels or percents).
+				var so = new SWFObject("/flash/flashgallery.swf", "gallery", "285", "300", "8"); 
+				so.addParam("quality", "high");
+				so.addParam("allowFullScreen", "true");
+				so.addParam("wmode", "transparent");
+				// Location of a folder with JPG and PNG files (relative to php script) or a link to Flickr photostream (for example "http://www.flickr.com/photos/username/" or "http://www.flickr.com/photos/username/sets/setid/").
+				so.addVariable("content_path",""); 
+				so.addVariable("color_path","/flash/default.xml"); // Location of xml file with settings.
+				so.addVariable("script_path","/photos/home_player.xml"); // Location of php script (not requred if you work with Flickr).
+				so.write("gallery");
+			</script>
+		</div>
+	</div>
+</div>

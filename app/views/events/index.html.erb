@@ -1,0 +1,9 @@
+<% content_for :title, "Cédule" %>
+<%=render :partial=>'layouts/fullpage_header'%>
+<ul>
+	<%=render :partial => 'listdetail',:collection => @events%>
+</ul>
+<%admin do%>
+<%= link_to 'Créer un événement', new_event_path %>
+<%end%>
+<%=render :partial=>'layouts/fullpage_footer'%>

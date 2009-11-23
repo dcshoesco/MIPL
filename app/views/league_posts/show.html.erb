@@ -1,0 +1,5 @@
+<% content_for :title, "Voir " + @league_post.title %>
+<%=render :partial=>'layouts/fullpage_header'%>
+<%=render :partial => "league_posts/fullpage_preview",:object => @league_post ,:locals=>{:show_details => false}%>
+<%= link_to 'Retour a la liste', league_posts_path %>
+<%=render :partial=>'layouts/fullpage_footer'%>

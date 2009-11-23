@@ -1,0 +1,29 @@
+<% content_for :title, "Accueil" %>
+<div id="ja-container" class="wrap clearfix">
+    <div class="main">
+        <div class="inner clearfix">
+            <!-- CONTENT -->
+			<div id="ja-mainbody">
+		        <div id="ja-current-content" class="clearfix">
+		            <div id="ja-contentheading">
+						<div class="blog">
+							<%= render(:partial => 'league_posts/home_posts',:locals => { :league_posts => @league_posts})%>
+							<%= render :partial => 'sponsors/home_list',:object => @sponsors%>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+					
+            <!-- //CONTENT -->
+            <!-- RIGHT COLUMN -->
+            <div id="ja-colwrap">
+                <div class="ja-innerpad">
+					<%= render(:partial => 'photos/home_player')%>
+					
+                     <%=render(:partial => 'team_posts/home_posts',:locals => {:team_posts => @team_posts})%>       
+                </div>
+            </div>
+            <!-- //RIGHT COLUMN -->
+        </div>
+    </div>
+</div>

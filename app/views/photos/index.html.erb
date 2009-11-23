@@ -1,0 +1,187 @@
+<% content_for :title, "Gallerie de photos" %>
+<div id="ja-container-f" class="wrap clearfix">
+	<div class="main">
+		<div class="inner clearfix" style="padding-left:5px;padding-right:5px;">
+			<!-- CONTENT -->
+			<div class="ja-tabswrap opal" style="width:100%;">	
+				<div id="myTab-366554165" class="container">
+					<div class="ja-tabs-title-top" style="height:38px;">			
+						<ul class="ja-tabs-title">
+							<%if @photos_general.length > 0%>
+							<li title="mod_custom"><h3><span>Générale</span></h3></li>
+							<%end%>
+							<%if @photos_event1.length > 0%>
+							<li title="mod_custom"><h3><span>Evénement 1</span></h3></li>
+							<%end%>
+							<%if @photos_event2.length > 0%>
+							<li title="mod_custom"><h3><span>Evénement 2</span></h3></li>
+							<%end%>
+							<%if @photos_event3.length > 0%>
+							<li title="mod_custom"><h3><span>Evénement 3</span></h3></li>
+							<%end%>
+							<%if @photos_event4.length > 0%>
+							<li title="mod_custom"><h3><span>Evénement 4</span></h3></li>
+							<%end%>
+							<%if @photos_event5.length > 0%>
+							<li title="mod_custom"><h3><span>Evénement 5</span></h3></li>
+							<%end%>
+							<%admin do%>
+							<li title="mod_custom"><h3><span>Admin</span></h3></li>
+							<%end%>
+						</ul>
+					</div>						
+					<div class="ja-tab-panels-top">
+						<%if @photos_general.length > 0%>
+						<div class="ja-tab-content">
+							<div class="ja-tab-subcontent">
+								<div class="picture-gallery" id="general"></div>
+								<!-- Script that embeds gallery. -->
+								<script language="javascript" type="text/javascript">
+									// Location of swf file. You can change gallery width and height here (using pixels or percents).
+									var so = new SWFObject("/flash/flashgallery.swf", "gallery", "950", "600", "8"); 
+									so.addParam("quality", "high");
+									so.addParam("allowFullScreen", "true");
+									so.addParam("wmode", "transparent");
+									// Location of a folder with JPG and PNG files (relative to php script) or a link to Flickr photostream (for example "http://www.flickr.com/photos/username/" or "http://www.flickr.com/photos/username/sets/setid/").
+									so.addVariable("content_path",""); 
+									so.addVariable("color_path","/flash/photo.xml"); // Location of xml file with settings.
+									so.addVariable("script_path","/photos/general.xml"); // Location of php script (not requred if you work with Flickr).
+									so.write("general");
+								</script>
+							</div>
+						</div>
+						<%end%>
+						<%if @photos_event1.length > 0%>
+						<div class="ja-tab-content">
+							<div class="ja-tab-subcontent">
+								<div class="picture-gallery" id="event1"></div>
+								<!-- Script that embeds gallery. -->
+								<script language="javascript" type="text/javascript">
+									// Location of swf file. You can change gallery width and height here (using pixels or percents).
+									var so = new SWFObject("/flash/flashgallery.swf", "gallery", "950", "600", "8"); 
+									so.addParam("quality", "high");
+									so.addParam("allowFullScreen", "true");
+									so.addParam("wmode", "transparent");
+									// Location of a folder with JPG and PNG files (relative to php script) or a link to Flickr photostream (for example "http://www.flickr.com/photos/username/" or "http://www.flickr.com/photos/username/sets/setid/").
+									so.addVariable("content_path",""); 
+									so.addVariable("color_path","/flash/photo.xml"); // Location of xml file with settings.
+									so.addVariable("script_path","/photos/event1.xml"); // Location of php script (not requred if you work with Flickr).
+									so.write("event1");
+								</script>
+							</div>
+						</div>
+						<%end%>
+						<%if @photos_event2.length > 0%>
+						<div class="ja-tab-content">
+							<div class="ja-tab-subcontent">
+								<div class="picture-gallery" id="event2"></div>
+								<!-- Script that embeds gallery. -->
+								<script language="javascript" type="text/javascript">
+									var so = new SWFObject("/flash/flashgallery.swf", "gallery", "950", "600", "8"); 
+									so.addParam("quality", "high");
+									so.addParam("allowFullScreen", "true");
+									so.addParam("wmode", "transparent");
+									so.addVariable("content_path",""); 
+									so.addVariable("color_path","/flash/photo.xml"); 
+									so.addVariable("script_path","/photos/event2.xml"); 
+									so.write("event2");
+								</script>
+							</div>
+						</div>
+						<%end%>
+						<%if @photos_event3.length > 0%>
+						<div class="ja-tab-content">
+							<div class="ja-tab-subcontent">
+								<div class="picture-gallery" id="event3"></div>
+								<!-- Script that embeds gallery. -->
+								<script language="javascript" type="text/javascript">
+									var so = new SWFObject("/flash/flashgallery.swf", "gallery", "950", "600", "8"); 
+									so.addParam("quality", "high");
+									so.addParam("allowFullScreen", "true");
+									so.addParam("wmode", "transparent");
+									so.addVariable("content_path",""); 
+									so.addVariable("color_path","/flash/photo.xml"); 
+									so.addVariable("script_path","/photos/event3.xml");
+									so.write("event3");
+								</script>
+							</div>
+						</div>
+						<%end%>
+						<%if @photos_event4.length > 0%>
+						<div class="ja-tab-content">
+							<div class="ja-tab-subcontent">
+								<div class="picture-gallery" id="event4"></div>
+								<!-- Script that embeds gallery. -->
+								<script language="javascript" type="text/javascript">
+									var so = new SWFObject("/flash/flashgallery.swf", "gallery", "950", "600", "8"); 
+									so.addParam("quality", "high");
+									so.addParam("allowFullScreen", "true");
+									so.addParam("wmode", "transparent");
+									so.addVariable("content_path",""); 
+									so.addVariable("color_path","/flash/photo.xml"); 
+									so.addVariable("script_path","/photos/event4.xml"); 
+									so.write("event4");
+								</script>
+							</div>
+						</div>
+						<%end%>
+						<%if @photos_event5.length > 0%>
+						<div class="ja-tab-content">
+							<div class="ja-tab-subcontent">
+								<div class="picture-gallery" id="event5"></div>
+								<!-- Script that embeds gallery. -->
+								<script language="javascript" type="text/javascript">
+									
+									var so = new SWFObject("/flash/flashgallery.swf", "gallery", "950", "600", "8"); 
+									so.addParam("quality", "high");
+									so.addParam("allowFullScreen", "true");
+									so.addParam("wmode", "transparent");
+									so.addVariable("content_path",""); 
+									so.addVariable("color_path","/flash/photo.xml"); 
+									so.addVariable("script_path","/photos/event5.xml");
+									so.write("event5");
+								</script>
+							</div>
+						</div>
+						<%end%>
+						<%admin do%>
+						<div class="ja-tab-content">
+							<div class="ja-tab-subcontent">
+								<h1>Liste des photos</h1>
+
+								<table>
+								  <tr>
+								    <th>Titre</th>
+								    <th>Categorie</th>
+								  </tr>
+
+								<% @photos.each do |photo| %>
+								  <tr>
+								    <td><%=h photo.title %></td>
+								    <td><%=h photo.category %></td>
+								    <td><%= link_to 'Modifier', edit_photo_path(photo) %></td>
+								    <td><%= link_to 'Supprimer', photo, :confirm => 'Are you sure?', :method => :delete %></td>
+								  </tr>
+								<% end %>
+								</table>
+
+								<br />
+
+								<%= link_to 'Nouvelle photo', new_photo_path %>
+							</div>
+						</div>
+						<%end%>
+					</div>
+				</div>
+			</div>
+			<script type="text/javascript" charset="utf-8">
+				window.addEvent("load", init);
+				function init() {
+					myTabs1 = new JATabs("myTab-366554165",{animType:'animMoveHor',style:'opal',position:'top',width:'100%',height:'auto',mouseType:'click',duration:1000,colors:10,useAjax:false,skipAnim:false});							
+				}
+			</script>
+		</div>
+	</div>
+</div>
+
+

@@ -1,0 +1,9 @@
+# config/config.yml
+development:
+  path_photo: /Volumes/DOCUMENTS/MIPL_FTP
+
+test:
+  path_photo: /Volumes/DOCUMENTS/MIPL_FTP
+
+production:
+  path_photo: /home/miplca/public_ftp/images

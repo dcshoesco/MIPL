@@ -1,0 +1,9 @@
+<% content_for :title, "Nouvelles de la ligue" %>
+<%=render :partial=>'layouts/fullpage_header'%>
+<%=render :partial => "league_posts/fullpage_preview",:collection => @league_posts , :locals => {:show_details => true}%>
+<%= will_paginate @league_posts,:prev_label => '<<',:next_label => '>>' %>
+<%admin do%>
+<br />
+<%= link_to 'Créer une nouvelle', new_league_post_path %>
+<%end%>
+<%=render :partial=>'layouts/fullpage_footer'%>

@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-gb" lang="en-gb">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>MIPL.CA (Mirabel Impact Paintball League) - <%=h yield(:title) %></title>
+    <script type="text/javascript" src="/javascripts/mootools.js"></script>
+    <script type="text/javascript" src="/javascripts/caption.js"></script>
+    <script type='text/javascript' src='/javascripts/ja_tabs.js' charset="utf-8"></script>
+	<link href="/stylesheets/ja.moomenu.css" rel="stylesheet" type="text/css" />
+    <script src="/javascripts/ja.moomenu.js" language="javascript" type="text/javascript"></script>
+    <link type='text/css' href='/stylesheets/ja_tabs.css' rel="stylesheet" />
+    <link rel="stylesheet" href="/stylesheets/system.css" type="text/css" />
+    <link rel="stylesheet" href="/stylesheets/general.css" type="text/css" />
+    <link rel="stylesheet" href="/stylesheets/typo.css" type="text/css" />
+    <link rel="stylesheet" href="/stylesheets/main.css" type="text/css" />
+
+
+    <script language="javascript" type="text/javascript">
+	var siteurl = 'index.html';
+	var tmplurl = 'templates/ja_opal/index.html';
+    </script>
+
+    <script language="javascript" type="text/javascript" src="/javascripts/ja.script.js"></script>
+    <script language="javascript" type="text/javascript" src="/javascripts/swfobject.js"></script>
+
+    <!--[if lte IE 6]>
+<style type="text/css">
+img {border: none;}
+</style>
+<![endif]-->
+</head>
+<body id="bd" class="fs3">
+    <div id="ja-wrapper">
+        <a name="Top" id="Top"></a>
+        <!-- HEADER -->
+        <div id="ja-header" class="wrap">
+            <div class="main clearfix">
+				<div id="logo">
+					<img src="/images/logo.png" />
+				</div>
+                <div id="ja-banner">
+                    <div class="advs bannergroup">
+						<%@all_teams = Team.all%>
+						<div class="banneritem"> 
+							<a href="<%=url_for @all_teams[0]%>">
+								<img src="<%=@all_teams[0].picture.url(:small)%>" alt="<%=@all_teams[0].name%>" />
+							</a>
+							<a href="<%=url_for @all_teams[1]%>">
+								<img src="<%=@all_teams[1].picture.url(:small)%>" alt="<%=@all_teams[1].name%>" />
+							</a>
+							<a href="<%=url_for @all_teams[2]%>">
+								<img src="<%=@all_teams[2].picture.url(:small)%>" alt="<%=@all_teams[2].name%>" />
+							</a>
+							<a href="<%=url_for @all_teams[3]%>">
+								<img src="<%=@all_teams[3].picture.url(:small)%>" alt="<%=@all_teams[3].name%>" />
+							</a>
+							<a href="<%=url_for @all_teams[4]%>">
+								<img src="<%=@all_teams[4].picture.url(:small)%>" alt="<%=@all_teams[4].name%>" />
+							</a>
+							<a href="<%=url_for @all_teams[5]%>">
+								<img src="<%=@all_teams[5].picture.url(:small)%>" alt="<%=@all_teams[5].name%>" />
+							</a>
+						</div>
+					</div>
+                </div>
+            </div>
+        </div>
+        <!-- //HEADER -->
+        <!-- MAIN NAVIGATION -->
+        <div id="ja-mainnav" class="wrap">
+            <div class="main">
+                <div class="inner clearfix">
+                    <ul class="no-display">
+                        <li><a href="#" title="Skip to content">Skip to content</a></li>
+                    </ul>
+					<%=render(:partial => 'layouts/menu',:locals => {:all_teams => @all_teams})%>
+                    <%=render(:partial => 'login/home_login')%>
+            	</div>
+            </div>
+        </div>
+        <!-- //MAIN NAVIGATION -->
+        

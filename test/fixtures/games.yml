@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  time: MyString
+  score_away: 1
+  score_home: 1
+  team_away_id: 1
+  team_home_id: 1
+
+two:
+  time: MyString
+  score_away: 1
+  score_home: 1
+  team_away_id: 1
+  team_home_id: 1

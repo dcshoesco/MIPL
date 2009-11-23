@@ -1,0 +1,9 @@
+<% content_for :title, "Modifier un sponsor" %>
+<%=render :partial=>'layouts/fullpage_header'%>
+<h1>Editing sponsor</h1>
+
+<%=render :partial => 'add_edit',:object => @sponsor%>
+
+<%= link_to 'Voir', @sponsor %> |
+<%= link_to 'Retour', sponsors_path %>
+<%=render :partial=>'layouts/fullpage_footer'%>

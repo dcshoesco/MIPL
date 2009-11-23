@@ -1,0 +1,25 @@
+<% content_for :title, "Voir les sponsors" %>
+<%=render :partial=>'layouts/fullpage_header'%>
+<h1>Listing sponsors</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Website</th>
+  </tr>
+
+<% @sponsors.each do |sponsor| %>
+  <tr>
+    <td><%=h sponsor.name %></td>
+    <td><%=h sponsor.website %></td>
+    <td><%= link_to 'Show', sponsor %></td>
+    <td><%= link_to 'Edit', edit_sponsor_path(sponsor) %></td>
+    <td><%= link_to 'Destroy', sponsor, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New sponsor', new_sponsor_path %>
+<%=render :partial=>'layouts/fullpage_footer'%>

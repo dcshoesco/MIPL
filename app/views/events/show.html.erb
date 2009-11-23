@@ -1,0 +1,14 @@
+<% content_for :title, "Voir un événement" %>
+<%=render :partial=>'layouts/fullpage_header'%>
+<p>
+  <b>Date:</b>
+  <%=h @event.date %>
+</p>
+
+<p>
+  <b>Terrain:</b>
+  <%=h @event.field %>
+</p>
+<%= link_to 'Modifier', edit_event_path(@event) %> |
+<%= link_to 'Retour', events_path %>
+<%=render :partial=>'layouts/fullpage_footer'%>

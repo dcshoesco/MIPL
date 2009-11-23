@@ -1,0 +1,27 @@
+<% content_for :title, "Voir l'équipe " + @team.name + "(" + @team.id + ")" %>
+<div id="ja-container" class="wrap clearfix">
+	<div class="main">
+		<div class="inner clearfix">
+			<!-- CONTENT -->
+			<div id="ja-mainbody">
+				<div id="ja-current-content" class="clearfix">
+					<div id="ja-contentheading">
+						<div class="blog">
+							<%=render :partial => 'team_posts/large_preview',:collection => @team_posts%>
+							<%= will_paginate @team_posts,:prev_label => '<<',:next_label => '>>' %>
+							<%team_owner @team.id do%>
+							<p><%= link_to 'Ecrire une nouvelle', new_team_post_path %></p>
+							<%end%>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+			<!-- //CONTENT -->
+        	<!-- RIGHT COLUMN -->
+        	<%=render :partial => 'teams/info_box', :object => @team%>
+			<%=render :partial => 'players/listbox', :object => @team%>
+        	<!-- //RIGHT COLUMN -->
+    	</div>
+	</div>
+</div>

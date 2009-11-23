@@ -1,0 +1,70 @@
+<ul id="ja-cssmenu" class="clearfix">
+    <li class="<%=menu_active 'static','index' %>">
+		<a href="<%=url_for :controller=>'static',:action=>'index'%>" class="menu-item0 first-item" title="Accueil">
+			<span class="menu-title">Accueil</span>
+		</a>
+	</li>
+    <li class="havechild <%=menu_active 'league_posts','index' %> <%=menu_active 'league_posts','show' %> <%=menu_active 'teams','show' %>">
+		<a href="<%=url_for :controller=>'league_posts',:action=>'index'%>" class="menu-item1" title="Nouvelles">
+			<span class="menu-title">Nouvelles</span>
+		</a>
+		<ul>
+            <li>
+				<a href="<%=url_for :controller=>'league_posts',:action=>'index'%>" class=" first-item" title="De la ligues">
+					<span class="menu-title">De la ligues</span>
+				</a>
+			</li>
+			
+            <li>
+				<a href="<%=url_for all_teams[0]%>" title="<%=all_teams[0].name%>">
+					<span class="menu-title"><%=all_teams[0].name%></span>
+				</a>
+			</li>
+			<li>
+				<a href="<%=url_for all_teams[1]%>" title="<%=all_teams[1].name%>">
+					<span class="menu-title"><%=all_teams[1].name%></span>
+				</a>
+			</li>
+			<li>
+				<a href="<%=url_for all_teams[2]%>" title="<%=all_teams[2].name%>">
+					<span class="menu-title"><%=all_teams[2].name%></span>
+				</a>
+			</li>
+			<li>
+				<a href="<%=url_for all_teams[3]%>" title="<%=all_teams[3].name%>">
+					<span class="menu-title"><%=all_teams[3].name%></span>
+				</a>
+			</li>
+			<li>
+				<a href="<%=url_for all_teams[4]%>" title="<%=all_teams[4].name%>">
+					<span class="menu-title"><%=all_teams[4].name%></span>
+				</a>
+			</li>
+			<li>
+				<a href="<%=url_for all_teams[5]%>" title="<%=all_teams[5].name%>">
+					<span class="menu-title"><%=all_teams[5].name%></span>
+				</a>
+			</li>
+        </ul>
+    </li>
+    <li class="<%=menu_active 'events','index' %>">
+		<a href="<%=url_for :controller=>'events',:action=>'index'%>" class="menu-item2" title="Cédule">
+			<span class="menu-title">Cédule</span>
+		</a>
+	</li>
+    <li class="<%=menu_active 'teams','index' %>">
+		<a href="<%=url_for :controller=>'teams',:action=>'index'%>" class="menu-item3" title="Classement">
+			<span class="menu-title">Classement</span>
+		</a>
+	</li>
+    <li class="<%=menu_active 'photos','index' %>">
+		<a href="<%=url_for :controller=>'photos',:action=>'index'%>" class="menu-item4" title="Photos">
+			<span class="menu-title">Photos</span>
+		</a>
+	</li>
+    <li class="<%=menu_active 'static','rules' %>">
+		<a href="<%=url_for :controller=>'static',:action=>'rules'%>" class="menu-item5" title="Rules">
+			<span class="menu-title">Reglements</span>
+		</a>
+	</li>
+</ul>

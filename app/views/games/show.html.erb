@@ -1,0 +1,31 @@
+<% content_for :title, "Voir une partie" %>
+<%=render :partial=>'layouts/fullpage_header'%>
+<p>
+  <b>Time:</b>
+  <%=h @game.time %>
+</p>
+
+<p>
+  <b>Score away:</b>
+  <%=h @game.score_away %>
+</p>
+
+<p>
+  <b>Score home:</b>
+  <%=h @game.score_home %>
+</p>
+
+<p>
+  <b>Team away:</b>
+  <%=h @game.team_away.name %>
+</p>
+
+<p>
+  <b>Team home:</b>
+  <%=h @game.team_home.name %>
+</p>
+
+
+<%= link_to 'Modifier', edit_game_path(@game) %> |
+<%= link_to 'Retour', games_path %>
+<%=render :partial=>'layouts/fullpage_footer'%>

@@ -1,0 +1,20 @@
+<!--Debut Article-->
+<div class="posts">
+	<%= image_tag(fullpage_preview.picture.url(:large),:class=>"caption",:align=>"left",:style => "float:left;") %>
+	<h2 class="contentheading"><%=fullpage_preview.title%></h2>
+	<span class="small-blue createdate"><%=I18n.l fullpage_preview.created_at ,:format => :post%></span>
+	<span class="small-blue createdby">MIPL</span>
+	<p><%=simple_format(fullpage_preview.description)%></p>
+<p>
+	<%admin do%>
+	<%= link_to 'Modifier', edit_league_post_path(fullpage_preview) %>
+	<%= link_to 'Supprimer', fullpage_preview, :confirm => 'Etes-vous sur?', :method => :delete %>
+	<%end%>
+	<%if show_details %>
+	<%= link_to 'Plus de détail...', fullpage_preview,:class=>"readon" %>
+	<%end%>
+</p>
+<div class="clearfix"></div>
+</div> 
+<span class="leading_separator">&nbsp;</span>
+<!--Fin Article-->

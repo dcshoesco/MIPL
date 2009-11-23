@@ -1,0 +1,16 @@
+<% content_for :title, "Voir un sponsor" %>
+<%=render :partial=>'layouts/fullpage_header'%>
+<p>
+  <b>Name:</b>
+  <%=h @sponsor.name %>
+</p>
+
+<p>
+  <b>Website:</b>
+  <%=h @sponsor.website %>
+</p>
+
+
+<%= link_to 'Edit', edit_sponsor_path(@sponsor) %> |
+<%= link_to 'Back', sponsors_path %>
+<%=render :partial=>'layouts/fullpage_footer'%>

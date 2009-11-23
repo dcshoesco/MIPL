@@ -1,0 +1,9 @@
+<% content_for :title, "Modifier photo" %>
+<%=render :partial=>'layouts/fullpage_header'%>
+<h1>Modifier photo</h1>
+
+<%=render :partial => 'add_edit',:object => @photo%>
+
+<%= link_to 'Voir', @photo %> |
+<%= link_to 'Retour', photos_path %>
+<%=render :partial=>'layouts/fullpage_footer'%>

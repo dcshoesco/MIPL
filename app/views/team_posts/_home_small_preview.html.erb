@@ -1,0 +1,6 @@
+<div class="ja-innerdiv clearfix">
+	<%= image_tag(home_small_preview.picture.url(:small),:class=>"img-border",:align => "left") %>
+    <span class="title"><a href="<%=url_for home_small_preview.team %>" title="<%=home_small_preview.team.name%>"><%=home_small_preview.title%></a></span>
+    <%=truncate(home_small_preview.description,:length => 90)%>
+	<br/><%= link_to '(' + home_small_preview.team.name + ')', home_small_preview.team,:class=>"readon" %>
+</div>

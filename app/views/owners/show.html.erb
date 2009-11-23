@@ -1,0 +1,41 @@
+<% content_for :title, "Voir propriétaire" %>
+<%=render :partial=>'layouts/fullpage_header'%>
+<p>
+  <b>Team:</b>
+  <%=h @owner.team.name %>
+</p>
+
+<p>
+  <b>Firstname:</b>
+  <%=h @owner.firstname %>
+</p>
+
+<p>
+  <b>Lastname:</b>
+  <%=h @owner.lastname %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%=h @owner.phone %>
+</p>
+
+<p>
+  <b>Username:</b>
+  <%=h @owner.username %>
+</p>
+
+<p>
+  <b>Hash password:</b>
+  <%=h @owner.password %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%=h @owner.email %>
+</p>
+
+
+<%= link_to 'Edit', edit_owner_path(@owner) %> |
+<%= link_to 'Back', owners_path %>
+<%=render :partial=>'layouts/fullpage_footer'%>

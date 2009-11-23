@@ -1,0 +1,6 @@
+<% content_for :title, "Créer un événement" %>
+<%=render :partial=>'layouts/fullpage_header'%>
+<h1>Créer un événement</h1>
+<%=render :partial => 'add_edit', :object => @event%>
+<%= link_to 'Retour', events_path %>
+<%=render :partial=>'layouts/fullpage_footer'%>

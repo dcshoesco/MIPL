@@ -1,0 +1,16 @@
+<% className = cycle("Odd","Even",:name => 'ranking') %>
+<tr>
+	<td class="rank<%=className%>"><%=(ranking_line_counter+1).to_s%></td>
+	<td class="img<%=className%>"><img src="<%=ranking_line.picture.url(:tiny)%>"/></td>
+	<td class="team<%=className%>">
+		<%= link_to ranking_line.name, ranking_line %>
+		<%admin do%>
+		<span style="float:right;"><%= link_to 'Modifier', edit_team_path(ranking_line) %></span>
+		<%end%>
+	</td>
+	<td class="score<%=className%>"><%=ranking_line.score%></td>
+	<td class="allowed<%=className%>"><%=ranking_line.allowed%></td>
+	<td class="wins<%=className%>"><%= ranking_line.wins%></td>
+	<td class="loses<%=className%>"><%= ranking_line.loses%></td>
+	<td class="total<%=className%>"><%= ranking_line.total%></td>
+</tr>

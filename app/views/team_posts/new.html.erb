@@ -1,0 +1,6 @@
+<% content_for :title, "Ecrire une nouvelle " + @subtitle %>
+<%=render :partial=>'layouts/fullpage_header'%>
+<h1>Ecrire une nouvelle</h1>
+<%=render :partial => 'add_edit',:locals => {:team_post => @team_post}%>
+<%= link_to 'Retour a l\'equipe', owner_team %>
+<%=render :partial=>'layouts/fullpage_footer'%>

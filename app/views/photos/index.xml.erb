@@ -1,0 +1,5 @@
+<pics>
+<% @photos.each do |photo| %>
+ 	<pic src="<%=photo.file.url %>" title="<%=photo.title%>" />
+<% end %>
+</pics>

@@ -1,0 +1,24 @@
+<% form_for(add_edit) do |f| %>
+  <%= f.error_messages %>
+<p>
+    Evénement<br />
+	<%= select("game", "event_id", Event.all.collect {|t| [ t.date, t.id ] }, {:prompt => 'Select Event'}) %>
+  </p>
+  <p>
+    <%= f.label :time %><br />
+    <%= f.text_field :time %>
+  </p>
+<p>
+    Equipe Visiteur<br />
+	<%= select("game", "team_away_id", Team.all.collect {|t| [ t.name, t.id ] }, {:prompt => 'Select Team'}) %> Score:<%= f.text_field :score_away,:maxlength => 1 %>
+  </p>
+<p>
+    Equipe Receveur<br />
+	<%= select("game", "team_home_id", Team.all.collect {|t| [ t.name, t.id ] }, {:prompt => 'Select Team'}) %> Score:
+    <%= f.text_field :score_home,:maxlength => 1 %>
+  </p>
+
+  <p>
+    <%= f.submit 'Enregistrer' %>
+  </p>
+<% end %>

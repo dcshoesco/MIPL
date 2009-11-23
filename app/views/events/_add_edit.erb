@@ -1,0 +1,14 @@
+<% form_for(add_edit) do |f| %>
+  <%= f.error_messages %>
+  <p>
+    Date<br />
+    <%= f.date_select :date %>
+  </p>
+  <p>
+    Terrain<br />
+    <%= f.text_field :field %>
+  </p>
+  <p>
+    <%= f.submit 'Enregistrer' %>
+  </p>
+<% end %>

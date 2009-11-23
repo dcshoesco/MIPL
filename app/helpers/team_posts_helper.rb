@@ -1,0 +1,2 @@
+module TeamPostsHelper
+end

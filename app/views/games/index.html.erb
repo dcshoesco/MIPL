@@ -1,0 +1,32 @@
+<% content_for :title, "Liste des parties" %>
+<%=render :partial=>'layouts/fullpage_header'%>
+<h1>Liste des parties</h1>
+
+<table>
+  <tr>
+	<td>Evénement</td>
+    <td>Heure</td>
+    <td>Equipe visiteur</td>
+    <td>Pointage visiteur</td>
+    <td>Equipe receveur</td>
+    <td>Pointage receveur</td>
+  </tr>
+
+<% @games.each do |game| %>
+  <tr>
+	<td><%=I18n.l game.event.date ,:format => :schedule%></td>
+    <td><%=h game.time %></td>
+    <td><%=h game.team_away.name %></td>
+    <td><%=h game.score_away %></td>
+    <td><%=h game.team_home.name %></td>
+    <td><%=h game.score_home %></td>
+    <td><%= link_to 'Modifier', edit_game_path(game) %></td>
+    <td><%= link_to 'Supprimer', game, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Créer une partie', new_game_path %>
+<%=render :partial=>'layouts/fullpage_footer'%>

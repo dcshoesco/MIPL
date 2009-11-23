@@ -1,0 +1,6 @@
+<% content_for :title, "Créer une partie" %>
+<%=render :partial=>'layouts/fullpage_header'%>
+<h1>Créer une partie</h1>
+<%=render :partial => 'add_edit',:object => @game%>
+<%= link_to 'Retour', games_path %>
+<%=render :partial=>'layouts/fullpage_footer'%>

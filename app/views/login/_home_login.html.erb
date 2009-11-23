@@ -1,0 +1,44 @@
+<div id="ja-headtools" class="ja-headtool">
+    <ul>
+		<% if !is_admin? && !is_team_owner? %>
+        <li><a class="login-switch" id="aLogin" href="#"
+            onclick="this.blur();showBox('ja-login','mod_login_username',this);return false;"
+            title="">Login</a>
+            <!--LOFIN FORM content-->
+            <div id="ja-login" style="width: 400px;">
+				<%if flash[:login_error]%>
+				<%=flash[:login_error]%>
+				<%end%>
+                <% form_tag url_for :controller => 'login', :action => 'login'  do %>
+                	<label for="mod_login_username" class="ja-login-user">
+                        <span>Nom d'usager</span>
+                        <input name="username" id="mod_login_username" type="text" class="inputbox" alt="username"
+                            size="10" />
+                    </label>
+                    <label for="mod_login_password" class="ja-login-password">
+                        <span>Mot de passe</span>
+                        <input type="password" id="mod_login_password" name="passwd" class="inputbox" size="10"
+                            alt="password" />
+                    </label>
+                    <input type="submit" name="Submit" class="button" value="Go" />
+                    <!--<div class="ja-login-links">
+                        <a href="#">Oublier votre mot de passe?</a>
+                    </div>-->
+                <%end%>
+            </div>
+        </li>
+		<li><a class="register-switch" href="#">Gerant d'equipe</a></li>
+		<%if flash[:login_error]%>
+			<script>showBox('ja-login','mod_login_username',document.getElementById('aLogin'));</script>
+		<%end%>
+		<%end%>
+        <%if is_admin?%>
+			<li><a class="login-switch" href="<%=url_for :controller=>'login',:action=>'logout'%>">Logout</a></li>
+			<li><a class="register-switch" href="#">Bienvenue admin</a></li>
+		<%end%>
+		<%if is_team_owner?%>
+			<li><a class="login-switch" href="<%=url_for :controller=>'login',:action=>'logout'%>">Logout</a></li>
+			<li><a class="register-switch"  href="<%=url_for(owner_team)%>"><%=owner_team.name%></a></li>
+		<%end%>
+    </ul>
+</div>

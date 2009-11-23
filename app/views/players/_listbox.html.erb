@@ -1,0 +1,17 @@
+<div id="ja-colwrap">
+	<div class="ja-innerpad">
+		<div class="moduletable" id="Mod58">
+		    <h3 class="clearfix">
+		        <span class="right-bg clearfix"><span class="left-bg">Allignement</span></span>
+			</h3>
+		    <div class="ja-box-ct clearfix">
+		        <div>
+					<%=render :partial => 'players/listdetail',:collection => listbox.players%>
+					<%team_owner listbox.id do%>
+					<p><%= link_to 'Gestion des joueurs', players_path %></p>
+					<%end%>
+				</div>
+		    </div>
+		</div>
+	</div>
+</div>

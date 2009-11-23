@@ -1,0 +1,19 @@
+<% form_for(add_edit, :html => { :multipart => true }) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    Titre<br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    Categorie<br />
+    <%= f.select :category,Photo::CATEGORIES.invert %>
+  </p>
+	<p>
+		Photo <br />
+	    <%= f.file_field :file %>
+	  </p>
+  <p>
+    <%= f.submit 'Enregistrer' %>
+  </p>
+<% end %>

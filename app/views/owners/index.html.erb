@@ -1,0 +1,35 @@
+<% content_for :title, "Liste des propriétaires" %>
+<%=render :partial=>'layouts/fullpage_header'%>
+<h1>Listing owners</h1>
+
+<table>
+  <tr>
+    <th>Team</th>
+    <th>Firstname</th>
+    <th>Lastname</th>
+    <th>Phone</th>
+    <th>Username</th>
+    <th>Password</th>
+    <th>Email</th>
+  </tr>
+
+<% @owners.each do |owner| %>
+  <tr>
+    <td><%=h owner.team.name %></td>
+    <td><%=h owner.firstname %></td>
+    <td><%=h owner.lastname %></td>
+    <td><%=h owner.phone %></td>
+    <td><%=h owner.username %></td>
+    <td><%=h owner.password %></td>
+    <td><%=h owner.email %></td>
+    <td><%= link_to 'Show', owner %></td>
+    <td><%= link_to 'Edit', edit_owner_path(owner) %></td>
+    <td><%= link_to 'Destroy', owner, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New owner', new_owner_path %>
+<%=render :partial=>'layouts/fullpage_footer'%>

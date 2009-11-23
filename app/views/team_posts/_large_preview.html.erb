@@ -1,0 +1,25 @@
+<!-- DEBUT NEWS -->
+<div class="leading">
+    <div class="contentpaneopen clearfix">
+        <div class="article-content">
+            <div class="ja-innerpad">
+                <div class="img-desc clearfix"><%= image_tag(large_preview.picture.url(:large),:class=>"caption") %></div>
+                <h2 class="contentheading"><%=large_preview.title%></h2>
+                <div class="article-toolswrap">
+                    <div class="article-tools">
+                        <div class="article-meta">
+                            <span class="createdate"><%=I18n.l large_preview.created_at ,:format => :post%></span>
+							<span class="createdby"><%=large_preview.team.name%></span>
+                        </div>
+                    </div>
+                </div>
+                <p><%=simple_format(large_preview.description)%></p>
+				<%team_owner large_preview.team.id do%>
+				<p>	<%= link_to 'Modifier', edit_team_post_path(large_preview) %> |
+					<%= link_to 'Supprimer', large_preview, :confirm => 'Etes vous sur?', :method => :delete %></p>
+				<%end%>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- FIN NEWS -->

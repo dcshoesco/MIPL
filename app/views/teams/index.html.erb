@@ -1,0 +1,20 @@
+<% content_for :title, "Classement" %>
+<%=render :partial=>'layouts/fullpage_header'%>
+<div class="rankingsDivisionBox">
+	<div class="rankingsHeader"><div class="rankingsTitle">Classement</div></div>
+	<table cellspacing="0" cellpadding="0">
+		<tr>
+			<th class="rank">Position</th>
+			<th class="team" colspan="2">Equipe</th>
+			<th class="score">Points pour</th>
+			<th class="allowed">Points contre</th>
+			<th class="wins">Victoires</th>
+			<th class="loses">Défaites</th>
+			<th class="total">Point total</th>
+		</tr>
+		<%=render :partial=>'ranking_line',:collection => @teams%>
+	</table>
+	<div class="rankingsFooter"></div>
+</div>
+<br/>
+<%=render :partial=>'layouts/fullpage_footer'%>

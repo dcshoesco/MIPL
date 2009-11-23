@@ -1,0 +1,18 @@
+<li>
+	<h2><%=listdetail.field%> - <%=I18n.l listdetail.date ,:format => :schedule%></h2>
+	<table class="schedule">
+		<tr>
+			<td class="header time"><strong>Heure</strong></td>
+			<td>&nbsp;</td>
+			<td class="header score"><strong>Pointage</strong></td>
+			<td class="header" colspan="2"><strong class="team">Receveur</strong></td>
+			<td>&nbsp;</td>
+			<td class="header score"><strong>Pointage</strong></td>
+			<td class="header" colspan="2"><strong class="team">Visiteur</strong></td>
+		</tr>
+		<%=render :partial => 'games/listdetail',:collection=>listdetail.games%>
+	</table>
+	<%admin do%>
+		<%= link_to 'Modifier un événement', edit_event_path(listdetail) %> | <%= link_to 'Supprimer un événement', listdetail, :confirm => 'Are you sure?', :method => :delete %> | <%= link_to 'Créer une partie', new_game_path %>
+	<%end%>
+</li>

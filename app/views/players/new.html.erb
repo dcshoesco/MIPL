@@ -1,0 +1,6 @@
+<% content_for :title, "Créer un nouveau joueur " + @subtitle %>
+<%=render :partial=>'layouts/fullpage_header'%>
+<h1>Nouveau joueur</h1>
+<%= render :partial => 'add_edit',:locals => {:player => @player}%>
+<%= link_to 'Retour à la liste des joueurs', players_path %>
+<%=render :partial=>'layouts/fullpage_footer'%>

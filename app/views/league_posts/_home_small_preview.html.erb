@@ -1,0 +1,24 @@
+<%if league_post%>
+<div class="contentpaneopen clearfix">
+    <div class="article-content">
+        <div class="ja-innerpad">
+            <div class="img-desc clearfix">
+				<%= image_tag(league_post.picture.url(:small),:class=>"caption") %>
+         	</div>
+            <h2 class="contentheading"><%=league_post.title %></h2>
+            <div class="article-toolswrap">
+                <div class="article-tools">
+                    <div class="article-meta">
+                        <span class="createdate"><%=I18n.l league_post.created_at ,:format => :post%></span>
+						<span class="createdby">MIPL</span>
+                    </div>
+                </div>
+            </div>
+            <p><%=simple_format(truncate(league_post.description,:length => 200))%></p>
+            <p>
+                <%= link_to 'Plus de détail...', league_post,:class=>"readon" %>
+            </p>
+        </div>
+    </div>
+</div>
+<%end%>

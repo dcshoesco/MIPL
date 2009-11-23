@@ -1,0 +1,16 @@
+<% content_for :title, "Voir photo" %>
+<%=render :partial=>'layouts/fullpage_header'%>
+<p>
+  <b>Titre:</b>
+  <%=h @photo.title %>
+</p>
+<%= image_tag @photo.file.url(:player) %>
+<p>
+  <b>Categorie:</b>
+  <%=h @photo.category %>
+</p>
+
+
+<%= link_to 'Modifier', edit_photo_path(@photo) %> |
+<%= link_to 'Retour', photos_path %>
+<%=render :partial=>'layouts/fullpage_footer'%>

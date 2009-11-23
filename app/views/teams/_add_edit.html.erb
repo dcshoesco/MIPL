@@ -1,0 +1,43 @@
+<% form_for(team, :html => { :multipart => true }) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    Nom<br />
+    <%= f.text_field :name %>
+  </p>
+<%admin do%>
+  <p>
+	Picture <br />
+    <%= f.file_field :picture %>
+  </p>
+<%end%>
+  <p>
+    Téléphone (apparait sur le site)<br />
+    <%= f.text_field :phone %>
+  </p>
+  <p>
+    Courriel (apparait sur le site)<br />
+    <%= f.text_field :email %>
+  </p>
+
+	<br/>
+  <p>
+	<b>Gérant d'équipe (information privé)</b><br/>
+	 <% f.fields_for :owner do |owner_fields| %>
+      <p>Prénom<br/><%= owner_fields.text_field :firstname %></p>
+      <p>Nom<br/><%= owner_fields.text_field :lastname %></p>
+<%if is_admin?%>
+	  <p>Nom d'usager<br/><%= owner_fields.text_field :username %></p>
+<%else%>
+	  <p>Nom d'usager<br/><strong><%=team.owner.username%></strong></p>
+<%end%>
+	  <p>Mot de passe<br/><%= owner_fields.text_field :password %></p>
+	  <p>Courriel<br/><%= owner_fields.text_field :email %></p>
+	  <p>Téléphone<br/><%= owner_fields.text_field :phone %></p>
+    <% end %>
+  </p>
+  
+  <p>
+    <%= f.submit 'Enregistrer' %>
+  </p>
+<% end %>

@@ -1,0 +1,14 @@
+<tr>
+	<td class="scheduleElement time"><%=listdetail.time%></td>
+	<td class="scheduleElement"><strong>-</strong></td>
+	<td class="scheduleElement score"><%=listdetail.score_home%></td>
+	<td class="schedulePicture"><img src="<%=listdetail.team_home.picture.url(:tiny)%>"/></td>
+	<td class="scheduleElement"><a href="<%=url_for listdetail.team_home%>"><%=listdetail.team_home.name%></a></td>
+	<td class="scheduleElement"><strong>VS</strong></td>
+	<td class="scheduleElement score"><%=listdetail.score_away%></td>
+	<td class="schedulePicture"><img src="<%=listdetail.team_away.picture.url(:tiny)%>"/></td>
+	<td class="scheduleElement"><a href="<%=url_for listdetail.team_away%>"><%=listdetail.team_away.name%></a></td>
+	<%admin do%>
+	<td class="scheduleElement"><%= link_to 'Modifier', edit_game_path(listdetail) %> | <%= link_to 'Supprimer', listdetail, :confirm => 'Are you sure?', :method => :delete %></td>
+	<%end%>
+</tr>

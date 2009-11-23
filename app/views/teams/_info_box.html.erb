@@ -1,0 +1,25 @@
+<div id="ja-colwrap">
+	<div class="ja-innerpad">
+		<div class="moduletable" id="Mod58">
+		    <h3 class="clearfix">
+		        <span class="right-bg clearfix"><span class="left-bg"><%=info_box.name%></span></span>
+			</h3>
+		    <div class="ja-box-ct clearfix">
+		        <div>
+					<div style="width:100%;text-align:center;"><%= image_tag info_box.picture.url(:medium) %></div>
+					<br/>
+					<div>
+						<strong>Proprietaire :</strong><%=info_box.owner.firstname%>&nbsp;<%=info_box.owner.lastname%>
+						<br/>
+						<strong>Courriel :</strong><%=info_box.email%><br/>
+						<strong>Telephone :</strong><%=info_box.phone%><br/><br/>
+						<strong>Victoires :</strong><%=info_box.wins%>&nbsp;<strong>Defaites :</strong><%=info_box.loses%>
+						<%team_owner info_box.id do%>
+						<p><%= link_to 'Modifier', edit_team_path(info_box) %></p>
+						<%end%>
+					</div>
+				</div>
+		    </div>
+		</div>
+	</div>
+</div>

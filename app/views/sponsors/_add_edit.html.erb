@@ -1,0 +1,19 @@
+<% form_for(add_edit, :html => { :multipart => true }) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+<p>
+	Image <br />
+    <%= f.file_field :image %>
+  </p>
+  <p>
+    <%= f.label :website %><br />
+    <%= f.text_field :website %>
+  </p>
+  <p>
+    <%= f.submit 'Enregistrer' %>
+  </p>
+<% end %>

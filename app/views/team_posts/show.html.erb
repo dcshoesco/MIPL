@@ -1,0 +1,52 @@
+<% content_for :title, "Voir nouvelle d'équipe " + @team_post.team.name %>
+<div id="ja-container" class="wrap clearfix">
+	<div class="main">
+		<div class="inner clearfix">
+			<!-- CONTENT -->
+			<div id="ja-mainbody">
+				<div id="ja-current-content" class="clearfix">
+					<div id="ja-contentheading">
+						<p>
+						<b>Team:</b>
+						<%=h @team_post.team_id %>
+						</p>
+
+						<p>
+						<b>Title:</b>
+						<%=h @team_post.title %>
+						</p>
+						<%= image_tag @team_post.picture.url(:small) %>
+						<br/>
+						<%= image_tag @team_post.picture.url(:large) %>
+
+						<p>
+						<b>Description:</b>
+						<%=h @team_post.description %>
+						</p>
+
+
+						<%= link_to 'Edit', edit_team_post_path(@team_post) %> |
+						<%= link_to 'Back', team_posts_path %>
+					</div>
+				</div>
+			</div>
+			<!-- //CONTENT -->
+        	<!-- RIGHT COLUMN -->
+        	<div id="ja-colwrap">
+            	<div class="ja-innerpad">
+					<div class="moduletable" id="Mod58">
+					    <h3 class="clearfix">
+					        <span class="right-bg clearfix"><span class="left-bg">Nouvelles des equipes</span></span>
+						</h3>
+					    <div class="ja-box-ct clearfix">
+					        <div>
+								Lorem Ipsum
+							</div>
+					    </div>
+					</div>
+				</div>
+        	</div>
+        	<!-- //RIGHT COLUMN -->
+    	</div>
+	</div>
+</div>

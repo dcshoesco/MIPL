@@ -1,0 +1,6 @@
+<% content_for :title, "Nouvelle équipe" %>
+<%=render :partial=>'layouts/fullpage_header'%>
+<h1>Nouvelle équipe</h1>
+<%= render :partial => 'add_edit',:locals => {:team => @team}%>
+<%= link_to 'Retour', teams_path %>
+<%=render :partial=>'layouts/fullpage_footer'%>

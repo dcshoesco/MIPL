@@ -1,0 +1,39 @@
+<% form_for(player, :html => { :multipart => true }) do |f| %>
+  <%= f.error_messages %>
+
+ <%if is_admin?%>
+ <p>
+    Equipe<br />
+	<%= select("player", "team_id", Team.all.collect {|t| [ t.name, t.id ] }, {:prompt => 'Select Team'}) %>
+  </p>
+<%else%>
+	<%=f.hidden_field :team_id ,:value => owner_team.id%>
+<%end%>
+  <p>
+	Photo<br />
+    <%= f.file_field :picture %>
+  </p>
+  <p>
+    Prénom<br />
+    <%= f.text_field :firstname %>
+  </p>
+  <p>
+    Nom<br />
+    <%= f.text_field :lastname %>
+  </p>
+  <p>
+    Surnom<br />
+    <%= f.text_field :nickname %>
+  </p>
+  <p>
+    Position<br />
+    <%= f.text_field :position %>
+  </p>
+  <p>
+    Numéro<br />
+    <%= f.text_field :number %>
+  </p>
+  <p>
+    <%= f.submit 'Enregistrer' %>
+  </p>
+<% end %>

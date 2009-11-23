@@ -1,0 +1,6 @@
+<% content_for :title, "Modifier une nouvelle" %>
+<%=render :partial=>'layouts/fullpage_header'%>
+<h1>Modifier une nouvelle</h1>
+<%=render :partial => 'add_edit',:locals => {:league_post => @league_post}%>
+<%= link_to 'Retour', league_posts_path %>
+<%=render :partial=>'layouts/fullpage_footer'%>

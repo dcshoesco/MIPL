@@ -1,0 +1,42 @@
+<% content_for :title, "Voir la liste de joueurs " + @subtitle %>
+<%=render :partial=>'layouts/fullpage_header'%>
+<h1>Liste de vos joueurs</h1>
+
+<table>
+  <tr>
+<%admin do%>
+    <th>Team</th>
+<%end%>
+    <th>Prénom</th>
+    <th>Nom</th>
+    <th>Surnom</th>
+    <th>Numéro</th>
+	<th>Position</th>
+  </tr>
+
+<% @players.each do |player| %>
+  <tr>
+<%admin do%>
+    <td><%=h player.team_id %></td>
+<%end%>
+    <td><%=h player.firstname %></td>
+    <td><%=h player.lastname %></td>
+    <td><%=h player.nickname %></td>
+    <td><%=h player.number %></td>
+	<td><%=h player.position%></td>
+<%admin do%>
+    <td><%= link_to 'Show', player %></td>
+<%end%>
+    <td><%= link_to 'Modifier', edit_player_path(player) %></td>
+    <td><%= link_to 'Supprimer', player, :confirm => 'Etes vous sur?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nouveau joueur', new_player_path %>
+<%if !is_admin?%>
+ | <%=link_to 'Retour à votre équipe', owner_team%>
+<%end%>
+<%=render :partial=>'layouts/fullpage_footer'%>

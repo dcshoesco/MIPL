@@ -1,0 +1,43 @@
+<% content_for :title, "Modifier propriétaire" %>
+<%=render :partial=>'layouts/fullpage_header'%>
+<h1>Editing owner</h1>
+
+<% form_for(@owner) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :team_id %><br />
+	<%= select("owner", "team_id", Team.all.collect {|t| [ t.name, t.id ] }, {:prompt => 'Select Team'}) %>
+  </p>
+  <p>
+    <%= f.label :firstname %><br />
+    <%= f.text_field :firstname %>
+  </p>
+  <p>
+    <%= f.label :lastname %><br />
+    <%= f.text_field :lastname %>
+  </p>
+  <p>
+    <%= f.label :phone %><br />
+    <%= f.text_field :phone %>
+  </p>
+  <p>
+    <%= f.label :username %><br />
+    <%= f.text_field :username %>
+  </p>
+  <p>
+    <%= f.label :password %><br />
+    <%= f.text_field :password %>
+  </p>
+  <p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @owner %> |
+<%= link_to 'Back', owners_path %>
+<%=render :partial=>'layouts/fullpage_footer'%>
